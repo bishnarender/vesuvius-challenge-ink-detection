@@ -18,3 +18,15 @@ Further, the 5 fold data is designed from 5 fragments. Let's see how. The volume
 
 ### train_patch_based
 -----
+Model input is fabricated by fixing 8 patches of shape [65,32,32] to a numpy array of shape [65, 256, 256]. Instead of feeding all layers to model only the middle 27 layers (19 to 47) is feeded i.e., in the shape [27,256,256], means feeding only 27 slices from z-direction. Similarly, the corresponding label is fabricated from patches to shape [256,256].
+
+As the model output is in shape [8,8] so to calculate loss, the original resolution of the label/target has been scaled down (to 1/32 via interpolate) to convert  shape [256,256] to [8,8]. 
+
+Following "timm" models have been used with different configuration of "middle layers, number of 3D CNN blocks and number of channels":
+1. convnext_tiny.fb_in1k
+2. resnetrs50
+3. swinv2_tiny_window8_256.ms_in1k
+
+ResidualConv3d Block is referred as 3D CNN block and its count is changed by arg parameter "--num_3d_layer".
+
+![model_1](https://github.com/bishnarender/vesuvius-challenge-ink-detection/assets/49610834/49c2f2df-badb-4018-ae93-9c90f7a17068)
