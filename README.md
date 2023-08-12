@@ -55,8 +55,11 @@ ResNet3dCSN Block is referred to as 3D CNN block.
 #### What is nelder-mead algorithm (been used here for getting the best threshold) ?
 -----
 The <b>Nelder–Mead method (also downhill simplex method, amoeba method, or polytope method)</b> is a numerical method used to find the minimum or maximum of an objective function in a multidimensional space. It is particularly useful when the function is non-linear, and its derivatives might be difficult to compute or unavailable.
+
 A starting point must be provided to the method/algorithm, which may be the endpoint of another global optimization algorithm or a random point drawn from the domain.
+
 Choose an initial set of points (vertices) in the parameter space. These points form the simplex. Simplex is a shape structure composed of n + 1 points (vertices), where n is the number of input dimensions to the function.
+
 Evaluate the objective function at each vertex of the simplex and order the vertices based on their function values. 
 1. <b>Reflect:</b> calculate the centroid of all vertices except the worst (highest value) vertex and obtain a new point. The new point is obtained by reflecting the simplex along the line joining the worst vertex with the centroid. If the reflected point is better than the second-worst point but not better than the best, replace the worst (highest value) vertex with the reflection. 
 
