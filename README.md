@@ -71,12 +71,9 @@ Evaluate the objective function at each vertex of the simplex and order the vert
     
 Continue iterating these steps until a termination criterion is met, such as a predefined number of iterations or when the simplex becomes sufficiently small.
 
-### Final
------
-<b>Final result is an ensemble of models from "train_patch_based" and "train_patch_based_1" types.</b>
-
 ![nelder_mead](https://github.com/bishnarender/vesuvius-challenge-ink-detection/assets/49610834/18713adf-02cd-42dc-bb46-7328884a849c)<br>
 [Image Reference](https://capsis.cirad.fr/capsis/documentation/optimisation)
 
-
-
+### Final
+-----
+<b>Final result is an ensemble of models from "train_patch_based" and "train_patch_based_1" types.</b>
