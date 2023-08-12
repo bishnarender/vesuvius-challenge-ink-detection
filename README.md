@@ -9,6 +9,7 @@ For better understanding of project, read the files in the following order:
 2. all_in_one.ipynb
 3. train_type_1.ipynb
 4. vesuvius-submission.ipynb
+
 <b>Code has been explained in the above files and in the linked files to these.</b>
 
 The second numbered fragment (from three) is further divided into 3 fragments i.e. 2, 4 and 5. Thus, making a total of 5 fragments i.e. 1, 2, 3, 4 and 5. The division is based on image height i.e., by dividing the height in three equal portions. The second numbered fragment is chosen because of the large size of its contents.
