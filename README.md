@@ -27,6 +27,25 @@ Following "timm" models have been used with different configuration of "middle l
 2. resnetrs50
 3. swinv2_tiny_window8_256.ms_in1k
 
-ResidualConv3d Block is referred as 3D CNN block and its count is changed by arg parameter "--num_3d_layer".
+ResidualConv3d Block is referred to as 3D CNN block and its count is changed by the arg parameter "--num_3d_layer".
+
+"timm" model is referred to as 2.5D CNN model. This timm model is called 2.5D CNN because each 2D slice in a sample has the information of several adjacent slices. But the model is a normal 2D CNN.
 
 ![model_1](https://github.com/bishnarender/vesuvius-challenge-ink-detection/assets/49610834/49c2f2df-badb-4018-ae93-9c90f7a17068)
+
+### train_patch_based_1
+-----
+Model input is fabricated by fixing 6 patches of shape [65,32,32] to a numpy array of shape [65, 192, 192]. Instead of feeding all layers to model only the middle 24 layers (20 to 45) is feeded i.e., in the shape [24,192,192], means feeding only 24 slices from z-direction. Similarly, the corresponding label is fabricated from patches to shape [192,192].
+
+As the model output is in shape [6,6] so to calculate loss, the original resolution of the label/target has been scaled down (to 1/32 via interpolate) to convert  shape [192,192] to [6,6]. 
+
+Following "backbone" models (of ResNet3dCSN) have been used with different configuration of "middle layers":
+1. resnet50-irCSN
+2. resnet152-irCSN
+
+ResNet3dCSN Block is referred to as 3D CNN block.
+
+![model_2](https://github.com/bishnarender/vesuvius-challenge-ink-detection/assets/49610834/32d4b673-16dc-443e-8695-6cf9c42f232a)
+
+
+
