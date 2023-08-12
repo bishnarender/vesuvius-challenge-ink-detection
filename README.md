@@ -47,5 +47,29 @@ ResNet3dCSN Block is referred to as 3D CNN block.
 
 ![model_2](https://github.com/bishnarender/vesuvius-challenge-ink-detection/assets/49610834/32d4b673-16dc-443e-8695-6cf9c42f232a)
 
+####  special augmentation (in addition to normal augmentation)
+-----
+1. Manifold mixup (mixup data after the stage of feature extraction).
+2. cutmix augmentation (mixup cutted portion with flipped data).
+
+#### What is nelder-mead algorithm (been used here for getting the best threshold) ?
+-----
+The <b>Nelder–Mead method (also downhill simplex method, amoeba method, or polytope method)</b> is a numerical method used to find the minimum or maximum of an objective function in a multidimensional space. It is particularly useful when the function is non-linear, and its derivatives might be difficult to compute or unavailable.
+A starting point must be provided to the method/algorithm, which may be the endpoint of another global optimization algorithm or a random point drawn from the domain.
+Choose an initial set of points (vertices) in the parameter space. These points form the simplex. Simplex is a shape structure composed of n + 1 points (vertices), where n is the number of input dimensions to the function.
+Evaluate the objective function at each vertex of the simplex and order the vertices based on their function values. 
+1. <b>Reflect:</b> calculate the centroid of all vertices except the worst (highest value) vertex and obtain a new point. The new point is obtained by reflecting the simplex along the line joining the worst vertex with the centroid. If the reflected point is better than the second-worst point but not better than the best, replace the worst (highest value) vertex with the reflection. 
+
+2. <b>Expand:</b> If the reflected point is better than the best vertex, try expanding further along that direction. If the expansion point is even better, replace the ongoing point with the expansion.
+
+3. <b>Contract:</b> If the reflected point is worse than the second-worst vertex, contract the simplex towards the better vertices. There are two types of contractions: outside and inside. An outside contraction replaces the worst point with a point between the <u>reflected point</u> and the <u>centroid</u>. An inside contraction replaces the worst point with a point between the <u>worst point</u> and the <u>centroid</u>.
+
+4. <b>Shrink:</b> If none of the above steps result in a better vertex, perform a shrink operation by moving all other vertices toward the best vertex.
+    
+Continue iterating these steps until a termination criterion is met, such as a predefined number of iterations or when the simplex becomes sufficiently small.
+
+![nelder_mead](https://github.com/bishnarender/vesuvius-challenge-ink-detection/assets/49610834/18713adf-02cd-42dc-bb46-7328884a849c)<br>
+[Image Reference](https://capsis.cirad.fr/capsis/documentation/optimisation)
+
 
 
