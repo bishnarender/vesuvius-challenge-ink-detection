@@ -1,5 +1,5 @@
 ## vesuvius-challenge-ink-detection
-## got a score higher than the winner.
+## got a score better than the winner.
 ![vesuvius-submission](https://github.com/bishnarender/vesuvius-challenge-ink-detection/assets/49610834/d3b84aaf-a22d-43f6-9637-c96fa0682ddf)
 
 ### Start 
